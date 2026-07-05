@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>TigerANC-WiFi-S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- نوار عنوان پنجره -->
+  <div class="titlebar">
+    <span class="title-icon">🔊</span>
+    <span class="title-text">TigerANC-WiFi-S</span>
+    <span class="title-close" id="closeBtn">✕</span>
+  </div>
+
+  <!-- صفحه‌ی اصلی منو -->
+  <div class="main-panel" id="mainPanel">
+    <div class="grid">
+
+      <button class="tile" data-target="parameters">
+        <div class="icon icon-parameters">
+          <svg viewBox="0 0 64 64"><rect x="8" y="10" width="34" height="44" rx="3" fill="#2c6fbb"/><rect x="12" y="14" width="26" height="36" rx="1" fill="#e8f1fb"/><line x1="16" y1="22" x2="34" y2="22" stroke="#2c6fbb" stroke-width="2"/><line x1="16" y1="29" x2="34" y2="29" stroke="#2c6fbb" stroke-width="2"/><line x1="16" y1="36" x2="34" y2="36" stroke="#2c6fbb" stroke-width="2"/><path d="M34 40 L54 20 L60 26 L40 46 Z" fill="#e2574c"/><path d="M34 40 L40 46 L32 48 Z" fill="#f4a300"/></svg>
+        </div>
+        <div class="tile-label">Parameters</div>
+      </button>
+
+      <button class="tile" data-target="model">
+        <div class="icon icon-model">
+          <svg viewBox="0 0 64 64"><rect x="8" y="30" width="20" height="20" fill="#3a6fd8"/><rect x="30" y="14" width="20" height="20" fill="#d84f3a"/><rect x="30" y="34" width="20" height="20" fill="#4bb35a"/></svg>
+        </div>
+        <div class="tile-label">Model</div>
+      </button>
+
+      <button class="tile" data-target="control">
+        <div class="icon icon-control">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="none" stroke="#1c1c1c" stroke-width="5"/><circle cx="32" cy="32" r="7" fill="#1c1c1c"/><line x1="32" y1="8" x2="32" y2="20" stroke="#1c1c1c" stroke-width="5"/><line x1="14" y1="44" x2="24" y2="37" stroke="#1c1c1c" stroke-width="5"/><line x1="50" y1="44" x2="40" y2="37" stroke="#1c1c1c" stroke-width="5"/><text x="32" y="37" font-size="11" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold">C</text></svg>
+        </div>
+        <div class="tile-label">Control</div>
+      </button>
+
+      <button class="tile" data-target="filters">
+        <div class="icon icon-filters">
+          <svg viewBox="0 0 64 64"><rect x="6" y="40" width="8" height="16" fill="#2b2b55"/><rect x="18" y="30" width="8" height="26" fill="#2b2b55"/><rect x="30" y="20" width="8" height="36" fill="#2b2b55"/><rect x="42" y="34" width="8" height="22" fill="#2b2b55"/><path d="M4 18 Q16 4 28 18 T52 18" fill="none" stroke="#2b2b55" stroke-width="3"/></svg>
+        </div>
+        <div class="tile-label">Filters</div>
+      </button>
+
+      <button class="tile" data-target="system">
+        <div class="icon icon-system">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="10" fill="#e8e8e8"/><circle cx="32" cy="32" r="5" fill="#4bb35a"/><g stroke="#e8e8e8" stroke-width="5"><line x1="32" y1="8" x2="32" y2="16"/><line x1="32" y1="48" x2="32" y2="56"/><line x1="8" y1="32" x2="16" y2="32"/><line x1="48" y1="32" x2="56" y2="32"/><line x1="14" y1="14" x2="20" y2="20"/><line x1="44" y1="44" x2="50" y2="50"/><line x1="50" y1="14" x2="44" y2="20"/><line x1="20" y1="44" x2="14" y2="50"/></g></svg>
+        </div>
+        <div class="tile-label">System</div>
+      </button>
+
+      <button class="tile" data-target="about">
+        <div class="icon icon-about">
+          <svg viewBox="0 0 64 64"><path d="M10 12 h20 a4 4 0 0 1 4 4 v34 a4 4 0 0 0 -4 -4 h-20 z" fill="#eef2fa"/><path d="M54 12 h-20 a4 4 0 0 0 -4 4 v34 a4 4 0 0 1 4 -4 h20 z" fill="#f7f9fc"/><line x1="16" y1="22" x2="26" y2="22" stroke="#88a"  stroke-width="1.5"/><line x1="16" y1="28" x2="26" y2="28" stroke="#88a" stroke-width="1.5"/><line x1="38" y1="22" x2="48" y2="22" stroke="#88a" stroke-width="1.5"/><line x1="38" y1="28" x2="48" y2="28" stroke="#88a" stroke-width="1.5"/></svg>
+        </div>
+        <div class="tile-label">About</div>
+      </button>
+
+    </div>
+
+    <button class="exit-bar" id="exitBtn">EXIT</button>
+  </div>
+
+  <!-- زیرصفحه‌ها (هر ماژول) -->
+  <div class="sub-panel" id="sub-parameters">
+    <div class="sub-header">PARAMETER</div>
+    <div class="sub-body two-col">
+      <div class="col">
+        <h4>Network Settings</h4>
+        <label>Machine Address</label>
+        <input type="text" value="192.168.1.1">
+        <label>Port</label>
+        <input type="text" value="8899">
+        <h4>AD/DA Settings</h4>
+        <label>Sample Rate</label>
+        <select><option>16000 Hz</option><option>8000 Hz</option><option>32000 Hz</option></select>
+        <button class="toggle-btn on">Anti-Alias</button>
+      </div>
+      <div class="col">
+        <h4>ANC Settings</h4>
+        <label>ANC Mode</label>
+        <select><option>Centralized</option><option>Mono</option></select>
+        <label>Con. Num</label>
+        <input type="number" value="2">
+        <label>Err. Num</label>
+        <input type="number" value="2">
+        <label>Control Taps</label>
+        <input type="number" value="800">
+        <label>Model Taps</label>
+        <input type="number" value="800">
+      </div>
+    </div>
+    <div class="sub-footer">
+      <button class="action-btn">Save Configuration</button>
+      <button class="home-btn" data-back>🏠 Home</button>
+    </div>
+  </div>
+
+  <div class="sub-panel" id="sub-model">
+    <div class="sub-header">MODEL</div>
+    <div class="sub-body">
+      <table class="data-table">
+        <thead><tr><th>Channel</th><th>Noise / dB</th><th>Residual / dB</th><th>Difference / dB</th></tr></thead>
+        <tbody>
+          <tr><td>Err. 1</td><td id="m-noise1">-24.7</td><td id="m-res1">-46.7</td><td id="m-diff1">22.0</td></tr>
+          <tr><td>Err. 2</td><td id="m-noise2">-26.9</td><td id="m-res2">-47.7</td><td id="m-diff2">20.8</td></tr>
+        </tbody>
+      </table>
+      <div class="side-controls">
+        <label>CH.</label>
+        <div class="ch-selector"><button data-ch="-1">◀</button><span id="modelCh">1</span><button data-ch="1">▶</button></div>
+        <button class="big-toggle" id="modelBtn">MODEL</button>
+        <button class="big-btn">RESET</button>
+        <label>Stepsize</label><input type="text" value="0.05">
+        <label>ID Sig Level / dB</label><input type="number" value="-20">
+        <button class="action-btn small">Save Filter</button>
+        <button class="action-btn small">Load Filter</button>
+      </div>
+    </div>
+    <div class="sub-footer"><button class="home-btn" data-back>🏠 Home</button></div>
+  </div>
+
+  <div class="sub-panel" id="sub-control">
+    <div class="sub-header">CONTROL</div>
+    <div class="sub-body">
+      <div class="bar-chart" id="controlChart">
+        <div class="chart-bar"><div class="bar-fill-v" style="height:31%;background:#e2574c" id="cbar0"></div><span class="bar-val" id="cval0">-24.8</span><span class="bar-label">Ref. 1</span></div>
+        <div class="chart-bar"><div class="bar-fill-v" style="height:60%;background:#3a6fd8" id="cbar1"></div><span class="bar-val" id="cval1">-48.2</span><span class="bar-label">Err. 1</span></div>
+        <div class="chart-bar"><div class="bar-fill-v" style="height:62%;background:#3a6fd8" id="cbar2"></div><span class="bar-val" id="cval2">-49.4</span><span class="bar-label">Err. 2</span></div>
+      </div>
+      <div class="side-controls">
+        <button class="big-toggle" id="ancBtn">ANC</button>
+        <button class="big-toggle warn" id="updateBtn">UPDATE</button>
+        <button class="big-btn">RESET</button>
+        <label>Stepsize</label><input type="text" value="5E-5">
+        <label>Leakage</label><input type="text" value="1.00">
+        <button class="action-btn small">Save Filter</button>
+        <button class="action-btn small">Load Filter</button>
+      </div>
+    </div>
+    <div class="sub-footer"><button class="home-btn" data-back>🏠 Home</button></div>
+  </div>
+
+  <div class="sub-panel" id="sub-filters">
+    <div class="sub-header">FILTERPLOT</div>
+    <div class="sub-body">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="time">Time Domain</button>
+        <button class="tab-btn" data-tab="freq">Frequency Domain</button>
+      </div>
+      <svg viewBox="0 0 400 220" class="plot-svg" id="plotSvg">
+        <polyline id="plotLine" points="0,20 20,200 40,60 60,150 80,110 100,130 120,120 140,125 160,122 180,124 400,124" fill="none" stroke="#3a6fd8" stroke-width="2"/>
+      </svg>
+      <div class="side-controls">
+        <label>Type</label><select id="filterType"><option>Model</option><option>Control</option></select>
+        <label>CTL. CH</label><input type="number" value="1">
+        <label>ERR. CH</label><input type="number" value="1">
+        <button class="action-btn">Plot</button>
+        <button class="action-btn">Clear</button>
+      </div>
+    </div>
+    <div class="sub-footer"><button class="home-btn" data-back>🏠 Home</button></div>
+  </div>
+
+  <div class="sub-panel" id="sub-system">
+    <div class="sub-header">SYSTEM</div>
+    <div class="sub-body">
+      <h4 style="text-align:center">CHANNEL DIAGNOSIS</h4>
+      <div class="diag-row">
+        <button class="diag-btn">IN1 to OUT All</button>
+        <button class="diag-btn">IN Max to OUT1</button>
+        <button class="diag-btn">Signal to OUT All</button>
+      </div>
+      <h4 style="text-align:center;margin-top:30px">SYSTEM STATUS</h4>
+      <div class="diag-row">
+        <button class="action-btn">Save System</button>
+        <button class="action-btn">Load System</button>
+      </div>
+    </div>
+    <div class="sub-footer"><button class="home-btn" data-back>🏠 Home</button></div>
+  </div>
+
+  <div class="sub-panel" id="sub-about">
+    <div class="sub-header">ABOUT</div>
+    <div class="sub-body about-body">
+      <h2>TigerANC-WiFi-S</h2>
+      <p>Version 1.0</p>
+      <p>Active Noise Control Interface</p>
+    </div>
+    <div class="sub-footer"><button class="home-btn" data-back>🏠 Home</button></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "tiger-anc-ui",
+  "version": "1.0.0",
+  "description": "TigerANC-WiFi-S style interface clone",
+  "main": "main.js",
+  "author": "You",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.yourcompany.tiganc",
+    "productName": "TigerANC-WiFi-S",
+    "directories": { "output": "dist" },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "style.css",
+      "script.js",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": ["portable", "nsis"],
+      "icon": "assets/icon.png"
+    }
+  }
+}
